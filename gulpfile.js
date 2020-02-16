@@ -1,14 +1,15 @@
 
 // LIBRARIES
-var gulp     = require('gulp'),
-compass      = require('gulp-compass'),
-plumber      = require('gulp-plumber'),
-prefix       = require('gulp-autoprefixer'),
-fileinclude  = require('gulp-file-include'),
-strip        = require('gulp-strip-comments'),
-path         = require('path'),
-del          = require('del'),
-browserSync  = require('browser-sync').create();
+var gulp        = require('gulp'),
+compass         = require('gulp-compass'),
+plumber         = require('gulp-plumber'),
+prefix          = require('gulp-autoprefixer'),
+fileinclude     = require('gulp-file-include'),
+strip           = require('gulp-strip-comments'),
+path            = require('path'),
+del             = require('del'),
+googleWebFonts  = require('gulp-google-webfonts'),
+browserSync     = require('browser-sync').create();
 
 /*
 *   Process styles
@@ -16,11 +17,11 @@ browserSync  = require('browser-sync').create();
 */
   function style() {
     return gulp.src('./source/scss/**/*.scss')
-      .pipe(plumber())
       .pipe(compass({
         css: 'dist/css',
         sass: 'source/scss',
       }))
+      .pipe(plumber())
       .pipe(prefix({
         cascade: false
       }))
@@ -28,6 +29,20 @@ browserSync  = require('browser-sync').create();
       .pipe(browserSync.stream());
   }
 /*  /Process styles */
+
+/*
+*   Process libraries
+*/
+  function libs() {
+
+    // Bootstrap
+    // Not getting SCSS dinamically to not break on version change
+    /*return gulp.src('node_modules/bootstrap/*')
+      .pipe(plumber())
+      .pipe(gulp.dest('./dist/source/bootstrap'))
+      .pipe(browserSync.stream());*/
+  }
+/*  /Process libraries */
 
 
 /*
@@ -68,12 +83,29 @@ browserSync  = require('browser-sync').create();
 
 /*
 *   Webfonts treatment
-*   todo: get gulp google fonts plugin
 */
-  // gulp.task('fonts', function() {
-  //   return gulp.src('./source/fonts/**/*')
-  //     .pipe(gulp.dest('./dist/fonts'));
-  // });
+  function googleFonts(){
+    var options = {
+      cssFilename:  'fonts-google.css',
+    };
+    // add to source files *just for organization
+    // todo: check a better automated way to generate the CSS and Fonts
+    //  this method doesn't integrate with SCSS in any way and since
+    //  you can't edit the css file paths (because it gets regenerated) and
+    //  can't avoid generating the CSS file (you could exclude 
+    //  after generation but seems wrong), this is the only 'right' way to use
+    //  this solution*: the path you use here is used to save files and in
+    //  the CSSfile. 
+    //  * considering having the fonts locally and with an automated process
+    return gulp.src('./fonts.list')
+        .pipe(googleWebFonts(options))
+        .pipe(plumber())
+        .pipe(gulp.dest('./dist/fonts'));
+  };
+
+  gulp.task('fonts', function() {
+    return googleFonts();
+  });
 /*   /Webfonts treatment */
 
 /*
@@ -147,4 +179,4 @@ browserSync  = require('browser-sync').create();
 /*  /Watch function and browsersync */
 
 // default 'gulp' command
-gulp.task('default', gulp.series('clean', html, style, watch));
+gulp.task('default', gulp.series('clean','fonts', html, style, watch));

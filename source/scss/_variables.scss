@@ -1,0 +1,31 @@
+//
+//    Project Variables
+//    Since we use most of bootstrap variables and it's naming conventions, 
+//    check node_modules\bootstrap\scss\_variables.scss as cheatsheet
+//
+
+
+// defaults
+  $body-bg: #242526;
+  $body-color: #eee;
+
+  $font-family-base: 'Roboto';
+  $font-weight-base: 300;
+  // $font-size-base:
+  $headings-font-family:'Alegreya Sans SC';
+
+// /defaults
+
+// brand colors
+  $primary: #a2ce1e;
+  $secondary: #0D0D41;
+// /brand colors
+
+// main navbar
+  $navbar-bg: #131414;
+// /main navbar
+
+// main footer
+  $footer-bg: $navbar-bg;
+  $footer-color:darken($body-color,40%);
+// /main footer

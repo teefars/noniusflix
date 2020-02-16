@@ -1,0 +1,108 @@
+@font-face {
+	font-family: 'Alegreya Sans SC';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: local('Alegreya Sans SC Thin'), local('AlegreyaSansSC-Thin'), url(Alegreya_Sans_SC-normal-100.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Alegreya Sans SC';
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: local('Alegreya Sans SC Light'), local('AlegreyaSansSC-Light'), url(Alegreya_Sans_SC-normal-300.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Alegreya Sans SC';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: local('Alegreya Sans SC Regular'), local('AlegreyaSansSC-Regular'), url(Alegreya_Sans_SC-normal-400.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Alegreya Sans SC';
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+	src: local('Alegreya Sans SC Medium'), local('AlegreyaSansSC-Medium'), url(Alegreya_Sans_SC-normal-500.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Alegreya Sans SC';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: local('Alegreya Sans SC Bold'), local('AlegreyaSansSC-Bold'), url(Alegreya_Sans_SC-normal-700.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Alegreya Sans SC';
+	font-style: normal;
+	font-weight: 800;
+	font-display: auto;
+	src: local('Alegreya Sans SC ExtraBold'), local('AlegreyaSansSC-ExtraBold'), url(Alegreya_Sans_SC-normal-800.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Alegreya Sans SC';
+	font-style: normal;
+	font-weight: 900;
+	font-display: auto;
+	src: local('Alegreya Sans SC Black'), local('AlegreyaSansSC-Black'), url(Alegreya_Sans_SC-normal-900.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: italic;
+	font-weight: 100;
+	font-display: auto;
+	src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(Roboto-italic-100.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: local('Roboto Light'), local('Roboto-Light'), url(Roboto-normal-300.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: local('Roboto'), local('Roboto-Regular'), url(Roboto-normal-400.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+	src: local('Roboto Medium'), local('Roboto-Medium'), url(Roboto-normal-500.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: local('Roboto Bold'), local('Roboto-Bold'), url(Roboto-normal-700.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+

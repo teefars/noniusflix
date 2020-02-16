@@ -1,0 +1,76 @@
+// this file could be split into page parts
+
+.page--{
+
+  &header{
+    @include clearfix();
+
+    // concept: everything pushes down, so it get properly stacked on mobile.
+    //          and everything pushes back evenly, with $grid-gutter-width/2 
+    //          ratio. If something has padding, the bottom should exclude this
+    padding:$grid-gutter-width 0 $grid-gutter-width/2;
+    background:$navbar-bg;
+
+    .logo{
+      @include transition(all .5s ease);
+      margin-bottom:$grid-gutter-width/2;
+      display:block;
+      float:left;
+      color:$body-color;
+      font-family:$headings-font-family;
+      font-size:2em;
+      font-weight:$font-weight-lighter;
+      letter-spacing:-1px;
+      span{
+        color:$primary;
+        margin-left:3px;
+        font-weight:$font-weight-normal;
+        letter-spacing:normal;
+      }
+      &:hover,
+      &:focus{
+        text-decoration:none;
+        &, & span{
+          color:white;
+        }
+      }
+    }//.logo
+
+  }//&header
+
+  &section{
+    @include clearfix();
+    padding:$grid-gutter-width 0 $grid-gutter-width/2;
+  }//&section
+
+  &footer{
+    $page-footer-height: 60px;
+
+    @include clearfix();
+
+    background:$footer-bg;
+    font-size:0.7em;
+    color:$footer-color;
+
+
+    // sticky footer
+    width:100%;
+    height:$page-footer-height;
+    line-height:$page-footer-height;
+    position: absolute;
+    bottom: 0;
+    @at-root{
+      html{
+        position:relative;
+        min-height:100%;
+      }
+      body{
+        margin-bottom:$page-footer-height;
+      }
+    }
+    p{
+      margin-bottom:0;
+    }
+  }//&footer
+
+}//.page--

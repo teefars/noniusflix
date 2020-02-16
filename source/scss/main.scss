@@ -3,4 +3,12 @@
 //	Import Variables and default CSS here
 //
 
-@import 'reset';
+// All variables of the project (even ones overwritting libs)
+@import 'variables';
+ 
+// Libs
+// custom bootstrap include
+@import 'extend/bootstrap/bootstrap';
+
+// Page parts component
+@import 'page/page';
