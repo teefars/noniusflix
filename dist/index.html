@@ -15,19 +15,96 @@
         </a>
       </div>
     </header>
+
     <div class="page--container">
 
       <section class="page--section">
+
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-auto">
-              <p>Hello world</p>
+
+          <div id="alerts"></div>
+
+          <div class="row justify-content-center align-items-center mb-5">
+            <div class="col-lg-7">
+
+              <form id="movie-search-form">
+
+                <div class="form-row align-items-center">
+                  <div class="col">
+                    <label class="sr-only" for="movie">Search Movie...</label>
+                    <input type="text" class="form-control mb-2" id="movie" placeholder="Search Movie...">
+                  </div>
+                  <div class="col-auto">
+                    <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+          <div class="slogans">
+            <div class="row mb-5 justify-content-center">
+              <div class="col-auto">
+                <blockquote class="blockquote text-center">
+                  <p><q>In space, no one can hear you scream</q></p>
+                  <footer class="blockquote-footer">Alien (1979) <a href="#" class="btn btn-sm btn-outline-dark ml-1">Watch</a></footer>
+                </blockquote>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-          </div> 
+          <div class="featured">
+
+            <h2>Featured</h2>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card text-white bg-dark mb-3 border-dark">
+                  <div class="row no-gutters">
+                    <div class="col-4">
+                      <img src="https://loremflickr.com/150/150/colors?random=1" class="card-img">
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Jaws (1975)</h5>
+                        <p class="card-text">You'll never go in the water again</p>
+                        <a href="#" class="btn btn-sm btn-outline-light ml-1">Watch</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+                <div class="card text-white bg-dark mb-3 border-dark">
+                  <div class="row no-gutters">
+                    <div class="col-4">
+                      <img src="https://loremflickr.com/150/150/colors?random=2" class="card-img">
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Ghostbusters (1984)</h5>
+                        <p class="card-text">Who ya gonna call?</p>
+                        <a href="#" class="btn btn-sm btn-outline-light ml-1">Watch</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="movies--list">
+
+                      </div>
+
+        </div>
+      </section> 
+
+    </div> 
 
     <footer class="page--footer">
       <div class="container">
@@ -38,6 +115,12 @@
         </div>
       </div>
     </footer>
+
+
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/movieSearch/movieSearch.js"></script>
   </body>
 
 </html>

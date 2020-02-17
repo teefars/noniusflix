@@ -58,8 +58,20 @@ browserSync     = require('browser-sync').create();
 *   todo: test
 */ 
   function javascript(){
+    jquery();
+    bootstraJS();
     return gulp.src('./source/js/**/*')
       .pipe(gulp.dest('./dist/js'));
+  }
+
+  function jquery(){
+    return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+      .pipe(gulp.dest('./dist/js/libs/'));
+  }
+
+  function bootstraJS(){
+    return gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js')
+      .pipe(gulp.dest('./dist/js/libs/'));
   }
 /*  /Move JS files */ 
 
@@ -112,10 +124,10 @@ browserSync     = require('browser-sync').create();
 *   Images
 *   todo: optimize
 */
-  // gulp.task('images', function() {
-  //   return gulp.src('./source/img/**/*')
-  //     .pipe(gulp.dest('./dist/img'));
-  // });
+  gulp.task('images', function() {
+    return gulp.src('./source/img/**/*')
+      .pipe(gulp.dest('./dist/img'));
+  });
 /*   /Images */
 
 /*
@@ -179,4 +191,4 @@ browserSync     = require('browser-sync').create();
 /*  /Watch function and browsersync */
 
 // default 'gulp' command
-gulp.task('default', gulp.series('clean','fonts', html, style, watch));
+gulp.task('default', gulp.series('clean','fonts','images',javascript, html, style, watch));

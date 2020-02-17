@@ -6,36 +6,98 @@
   </head>
 
   <body>
-    <header class="page--header">
-      <div class="container">
-        <a href="/" class="logo">
-          Nonius<span>Flix</span>
-        </a>
-      </div><!-- container -->
-    </header><!-- .page--header -->
+    @@include('./partials/_header.html')
+
     <div class="page--container">
 
       <section class="page--section">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-auto">
-              <p>Hello world</p>
-            </div><!--  /.col -->
-          </div><!--  /.row -->
-        </div><!--  /.container -->
-      </section><!-- .page--section -->
-      
-    </div> 
 
-    <footer class="page--footer">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <p>2020@teefars</p>
-          </div><!--  /.col -->
-        </div><!--  /.row -->
-      </div><!--  /.container -->
-    </footer><!--  /.page--footer -->
+        <div class="container">
+
+          <div id="alerts"></div><!-- /#alerts  -->
+
+          <div class="row justify-content-center align-items-center mb-5">
+            <div class="col-lg-7">
+
+              <form id="movie-search-form">
+
+                <div class="form-row align-items-center">
+                  <div class="col">
+                    <label class="sr-only" for="movie">Search Movie...</label>
+                    <input type="text" class="form-control mb-2" id="movie" placeholder="Search Movie...">
+                  </div>
+                  <div class="col-auto">
+                    <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
+                  </div>
+                </div><!-- ./form-row -->
+
+              </form>
+
+            </div><!--  /.col -->
+
+          </div><!--  /.row -->
+
+          <div class="slogans">
+            <!-- 
+            --    Movies slogans
+            --    todo: make a service to switch them
+            !-->
+            <div class="row mb-5 justify-content-center">
+              <div class="col-auto">
+                <blockquote class="blockquote text-center">
+                  <p><q>In space, no one can hear you scream</q></p>
+                  <footer class="blockquote-footer">Alien (1979) <a href="#" class="btn btn-sm btn-outline-dark ml-1">Watch</a></footer>
+                </blockquote>
+              </div><!--  /.col -->
+            </div><!--  /.row -->
+          </div><!--  /.slogans -->
+
+          <div class="featured">
+
+            <h2>Featured</h2>
+
+            <div class="row">
+              <div class="col-md-6">
+                <!-- Generic name so it could be changed format -->
+                @@include('./partials/components/movies/_movie-single.html', {
+                  "image": "https://loremflickr.com/150/150/colors?random=1",
+                  "title": "Jaws (1975)",
+                  "description": "You'll never go in the water again",
+                  "link": "#"
+                })
+
+              </div><!--  /.col -->
+              <div class="col-md-6">
+                @@include('./partials/components/movies/_movie-single.html', {
+                  "image": "https://loremflickr.com/150/150/colors?random=2",
+                  "title": "Ghostbusters (1984)",
+                  "description": "Who ya gonna call?",
+                  "link": "#"
+                })
+              </div><!--  /.col -->
+            </div><!--  /.row -->
+          </div><!--  /.featured -->
+
+          <div id="movies--list">
+            
+          </div><!--  /#movies--list -->
+
+        </div><!--  /.container -->
+      </section><!-- .page--section --> 
+
+    </div> <!-- page--container -->
+
+    @@include('./partials/_footer.html')
+
+
+    <!-- Libs -->
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+    <!-- /Libs -->
+
+    <!-- Custom -->
+    <script type="text/javascript" src="js/movieSearch/movieSearch.js"></script>
+    <!-- /Custom -->
   </body>
 
 </html>

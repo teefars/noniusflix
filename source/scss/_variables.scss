@@ -19,13 +19,19 @@
 // brand colors
   $primary: #a2ce1e;
   $secondary: #0D0D41;
+
+  $dark:rgba(0,0,0,0.5);
 // /brand colors
 
 // main navbar
-  $navbar-bg: #131414;
+  $navbar-bg: rgba(0,0,0,0.8);
 // /main navbar
 
 // main footer
   $footer-bg: $navbar-bg;
   $footer-color:darken($body-color,40%);
 // /main footer
+
+// Card
+  // $card-color: 
+// /Card
